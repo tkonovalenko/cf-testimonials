@@ -1,0 +1,19 @@
+.wrapper,
+.mcontent,
+.container,
+.page-content {
+  min-height: 100vh;
+}
+
+.wrapper {
+  background-color: $bg-color;
+}
+
+.page-content {
+  display: flex;
+  flex-flow: column;
+
+  justify-content: center;
+
+  font-size: 13px;
+}

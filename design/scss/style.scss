@@ -1,0 +1,21 @@
+// Variables
+$footer-height: 0;
+$viewport-width: 1440px;
+$container-width: 1110px;
+$container-padding: 0;
+
+$bg-color: #edf2f8;
+$dflt-card-color: white;
+
+$author-photos: daniel, jeanette, jonathan, kira, patrick;
+
+// Instruments
+@import "./_misc/mixins.scss";
+@import "./_misc/placeholders.scss";
+@import "./_misc/fonts.scss";
+@import "./_misc/normalize.scss";
+@import "./_misc/adjustment.scss";
+
+// Sections
+@import "./page-content.scss";
+@import "./testimonials.scss";
