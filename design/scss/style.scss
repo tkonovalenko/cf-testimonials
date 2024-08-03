@@ -4,8 +4,12 @@ $viewport-width: 1440px;
 $container-width: 1110px;
 $container-padding: 0;
 
-$bg-color: #edf2f8;
-$dflt-card-color: white;
+$bg-color: hsl(210, 46%, 95%);
+$dflt-card-color: hsl(0, 0%, 100%);
+$card-accent1: hsl(263, 55%, 52%);
+$card-accent2: hsl(217, 19%, 35%);
+$card-accent3: hsl(219, 29%, 14%);
+$card-accent4: hsl(0, 0%, 81%);
 
 $author-photos: daniel, jeanette, jonathan, kira, patrick;
 
@@ -17,5 +21,8 @@ $author-photos: daniel, jeanette, jonathan, kira, patrick;
 @import "./_misc/adjustment.scss";
 
 // Sections
-@import "./page-content.scss";
-@import "./testimonials.scss";
+@import "./sections/page-content.scss";
+@import "./sections/testimonials.scss";
+
+//Devices
+@import "./devices/mobile_375px.scss";

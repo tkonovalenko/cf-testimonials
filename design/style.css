@@ -5,6 +5,18 @@
   clear: both;
 }
 
+@font-face {
+  font-family: "barlow_semi_condensed_medium";
+  src: url("../fonts/Barlow_Semi_Condensed/barlowsemicondensed-medium-webfont.woff2") format("woff2"), url("../fonts/Barlow_Semi_Condensed/barlowsemicondensed-medium-webfont.woff") format("woff"), url("../fonts/Barlow_Semi_Condensed/barlowsemicondensed-medium-webfont.svg#barlow_semi_condensedmedium") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "barlow_semi_condensed_semibold";
+  src: url("../fonts/Barlow_Semi_Condensed/barlowsemicondensed-semibold-webfont.woff2") format("woff2"), url("../fonts/Barlow_Semi_Condensed/barlowsemicondensed-semibold-webfont.woff") format("woff"), url("../fonts/Barlow_Semi_Condensed/barlowsemicondensed-semibold-webfont.svg#barlow_semi_condensedsemibold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -365,8 +377,10 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   margin-top: 0;
+  margin-bottom: 0;
   font-weight: normal;
 }
 
@@ -421,11 +435,11 @@ footer {
 .mcontent,
 .container,
 .page-content {
-  min-height: 100vh;
+  height: 100%;
 }
 
 .wrapper {
-  background-color: #edf2f8;
+  background-color: hsl(210, 46%, 95%);
 }
 
 .page-content {
@@ -438,12 +452,17 @@ footer {
 .testimonials {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  gap: 26px 30px;
+  font-family: "barlow_semi_condensed_medium", sans-serif;
+  font-display: swap;
 }
 
 .testimonials__card {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
   border-radius: 7px;
-  background-color: white;
+  background-color: hsl(0, 0%, 100%);
   padding: 26px 32px;
   box-shadow: 40px 45px 52px -26px rgba(0, 0, 0, 0.1);
 }
@@ -456,15 +475,59 @@ footer {
   grid-row-end: span 2;
 }
 
+.testimonials__card--purple {
+  background: no-repeat url("../images/bg-pattern-quotation.svg"), hsl(263, 55%, 52%);
+  background-position: 66.1% 0;
+  color: white;
+}
+
+.testimonials__card--grey {
+  background-color: hsl(217, 19%, 35%);
+  color: white;
+}
+
+.testimonials__card--black {
+  background-color: hsl(219, 29%, 14%);
+  color: white;
+}
+
 .testimonials__card-author {
   display: flex;
   flex-flow: row;
+  align-items: center;
 }
 
 .testimonials__author-photo {
   border-radius: 50%;
   width: 28px;
   height: 28px;
+}
+
+.testimonials__author-data {
+  margin-left: 15px;
+}
+
+.testimonials__author-name {
+  font-family: "barlow_semi_condensed_semibold", sans-serif;
+  font-display: swap;
+}
+
+.testimonials__author-status {
+  opacity: 50%;
+  font-size: 11px;
+}
+
+.testimonials__card-title {
+  margin-top: 17px;
+  font-family: "barlow_semi_condensed_semibold", sans-serif;
+  font-display: swap;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.testimonials__card-text {
+  margin-top: 19px;
+  opacity: 70%;
 }
 
 .testimonials__author-photo--daniel {
@@ -490,4 +553,16 @@ footer {
 .testimonials__author-photo--patrick {
   background-image: url("../images/image-patrick.jpg");
   background-size: contain;
+}
+
+@media all and (max-device-width: 375px) {
+  .testimonials {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .testimonials__card--doubled-h {
+    grid-column: 1/span 1;
+  }
+  .testimonials__card--doubled-v {
+    grid-column: 1/span 1;
+  }
 }/*# sourceMappingURL=style.css.map */

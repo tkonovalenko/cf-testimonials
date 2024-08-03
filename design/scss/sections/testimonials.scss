@@ -1,0 +1,83 @@
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px 30px;
+
+  @include fontBarlow(medium);
+}
+
+.testimonials__card {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+
+  border-radius: 7px;
+  background-color: $dflt-card-color;
+  padding: 26px 32px;
+  @include box-shadow(40px 45px 52px -26px rgba(0, 0, 0, 0.1));
+}
+
+.testimonials__card--doubled-h {
+  grid-column-end: span 2;
+}
+
+.testimonials__card--doubled-v {
+  grid-row-end: span 2;
+}
+
+.testimonials__card--purple {
+  background: no-repeat url("../images/bg-pattern-quotation.svg"), $card-accent1;
+  background-position: 66.1% 0;
+  color: white;
+}
+.testimonials__card--grey {
+  background-color: $card-accent2;
+  color: white;
+}
+.testimonials__card--black {
+  background-color: $card-accent3;
+  color: white;
+}
+
+.testimonials__card-author {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
+.testimonials__author-photo {
+  border-radius: 50%;
+  @include square(28px);
+}
+
+.testimonials__author-data {
+  margin-left: 15px;
+}
+
+.testimonials__author-name {
+  @include fontBarlow(semibold);
+}
+
+.testimonials__author-status {
+  opacity: 50%;
+  font-size: 11px;
+}
+
+.testimonials__card-title {
+  margin-top: 17px;
+  @include fontBarlow(semibold);
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.testimonials__card-text {
+  margin-top: 19px;
+  opacity: 70%;
+}
+
+@each $photo in $author-photos {
+  .testimonials__author-photo--#{$photo} {
+    background-image: url("../images/image-#{$photo}.jpg");
+    background-size: contain;
+  }
+}
