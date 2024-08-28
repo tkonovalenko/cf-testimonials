@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .container::after {
   content: "";
   display: block;
@@ -372,6 +371,35 @@ template {
   box-sizing: inherit;
 }
 
+html {
+  font-size: 16px;
+}
+@media screen and (max-width: 1400px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 992px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 12px;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -391,7 +419,6 @@ html {
 }
 
 body {
-  font-size: 16px;
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
 }
@@ -399,15 +426,37 @@ body {
 .wrapper {
   position: relative;
   min-height: 100%;
-  overflow: hidden;
-  min-width: 1440px;
 }
 
-/* width: размер контейнера дизайна + 40px для padding*/
 .container {
-  width: 1110px;
+  max-width: 1110px;
   padding: 0 0;
   margin: 0 auto;
+}
+@media screen and (max-width: 1400px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .container {
+    max-width: auto;
+  }
 }
 
 ul {
@@ -416,63 +465,60 @@ ul {
   margin: 0;
 }
 
-.wrapper::after {
-  content: "";
-  display: block;
-  height: 0;
-}
-
-footer {
-  position: relative;
-  height: 0;
-  overflow: hidden;
-  width: 100%;
-  min-width: 1440px;
-  margin-top: 0;
-}
-
 .wrapper,
 .mcontent,
-.container,
-.page-content {
+.container {
   height: 100%;
 }
 
-.wrapper {
-  background-color: hsl(210, 46%, 95%);
-}
-
 .page-content {
+  min-height: 100%;
+  background-color: hsl(210, 46%, 95%);
   display: flex;
   flex-flow: column;
   justify-content: center;
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 
 .testimonials {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 26px 30px;
+  gap: 1.625rem 1.875rem;
   font-family: "barlow_semi_condensed_medium", sans-serif;
   font-display: swap;
+}
+@media screen and (max-width: 992px) {
+  .testimonials {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .testimonials__card {
   display: flex;
   flex-flow: column;
   justify-content: center;
-  border-radius: 7px;
+  border-radius: 0.4375rem;
   background-color: hsl(0, 0%, 100%);
-  padding: 26px 32px;
-  box-shadow: 40px 45px 52px -26px rgba(0, 0, 0, 0.1);
+  padding: 1.625rem 2rem;
+  box-shadow: 2.5rem 2.8125rem 3.25rem -1.625rem rgba(0, 0, 0, 0.1);
 }
 
 .testimonials__card--doubled-h {
   grid-column-end: span 2;
 }
+@media screen and (max-width: 992px) {
+  .testimonials__card--doubled-h {
+    grid-column: 1/span 1;
+  }
+}
 
 .testimonials__card--doubled-v {
   grid-row-end: span 2;
+}
+@media screen and (max-width: 992px) {
+  .testimonials__card--doubled-v {
+    grid-column: 1/span 1;
+  }
 }
 
 .testimonials__card--purple {
@@ -499,12 +545,12 @@ footer {
 
 .testimonials__author-photo {
   border-radius: 50%;
-  width: 28px;
-  height: 28px;
+  width: 1.75rem;
+  height: 1.75rem;
 }
 
 .testimonials__author-data {
-  margin-left: 15px;
+  margin-left: 0.9375rem;
 }
 
 .testimonials__author-name {
@@ -514,19 +560,19 @@ footer {
 
 .testimonials__author-status {
   opacity: 50%;
-  font-size: 11px;
+  font-size: 0.6875rem;
 }
 
 .testimonials__card-title {
-  margin-top: 17px;
+  margin-top: 1.0625rem;
   font-family: "barlow_semi_condensed_semibold", sans-serif;
   font-display: swap;
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 1.25rem;
+  line-height: 1.4375rem;
 }
 
 .testimonials__card-text {
-  margin-top: 19px;
+  margin-top: 1.1875rem;
   opacity: 70%;
 }
 
@@ -553,16 +599,4 @@ footer {
 .testimonials__author-photo--patrick {
   background-image: url("../images/image-patrick.jpg");
   background-size: contain;
-}
-
-@media all and (max-device-width: 375px) {
-  .testimonials {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .testimonials__card--doubled-h {
-    grid-column: 1/span 1;
-  }
-  .testimonials__card--doubled-v {
-    grid-column: 1/span 1;
-  }
 }/*# sourceMappingURL=style.css.map */

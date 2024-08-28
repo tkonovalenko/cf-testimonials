@@ -1,9 +1,12 @@
 .testimonials {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 26px 30px;
+  gap: PxToRem(26px) PxToRem(30px);
 
   @include fontBarlow(medium);
+  @include md {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .testimonials__card {
@@ -11,18 +14,28 @@
   flex-flow: column;
   justify-content: center;
 
-  border-radius: 7px;
+  border-radius: PxToRem(7px);
   background-color: $dflt-card-color;
-  padding: 26px 32px;
-  @include box-shadow(40px 45px 52px -26px rgba(0, 0, 0, 0.1));
+  padding: PxToRem(26px) PxToRem(32px);
+  @include box-shadow(
+    PxToRem(40px) PxToRem(45px) PxToRem(52px) PxToRem(-26px) rgba(0, 0, 0, 0.1)
+  );
 }
 
 .testimonials__card--doubled-h {
   grid-column-end: span 2;
+
+  @include md {
+    grid-column: 1 / span 1;
+  }
 }
 
 .testimonials__card--doubled-v {
   grid-row-end: span 2;
+
+  @include md {
+    grid-column: 1 / span 1;
+  }
 }
 
 .testimonials__card--purple {
@@ -47,11 +60,11 @@
 
 .testimonials__author-photo {
   border-radius: 50%;
-  @include square(28px);
+  @include square(PxToRem(28px));
 }
 
 .testimonials__author-data {
-  margin-left: 15px;
+  margin-left: PxToRem(15px);
 }
 
 .testimonials__author-name {
@@ -60,18 +73,18 @@
 
 .testimonials__author-status {
   opacity: 50%;
-  font-size: 11px;
+  font-size: PxToRem(11px);
 }
 
 .testimonials__card-title {
-  margin-top: 17px;
+  margin-top: PxToRem(17px);
   @include fontBarlow(semibold);
-  font-size: 20px;
-  line-height: 23px;
+  font-size: PxToRem(20px);
+  line-height: PxToRem(23px);
 }
 
 .testimonials__card-text {
-  margin-top: 19px;
+  margin-top: PxToRem(19px);
   opacity: 70%;
 }
 

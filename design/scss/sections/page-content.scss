@@ -1,19 +1,16 @@
 .wrapper,
 .mcontent,
-.container,
-.page-content {
+.container {
   height: 100%;
 }
 
-.wrapper {
-  background-color: $bg-color;
-}
-
 .page-content {
+  min-height: 100%;
+  background-color: $bg-color;
   display: flex;
   flex-flow: column;
 
   justify-content: center;
 
-  font-size: 13px;
+  font-size: PxToRem(13px);
 }
